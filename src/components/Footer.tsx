@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Shield, Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
@@ -7,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
                 <Shield className="w-5 h-5 text-primary-foreground" />
               </div>
@@ -19,7 +20,7 @@ const Footer = () => {
                   Health Group LLC
                 </span>
               </div>
-            </div>
+            </Link>
             <p className="text-sm leading-relaxed" style={{ color: 'hsl(220, 15%, 55%)' }}>
               Integrated primary care and behavioral health. Compassionate, modern healthcare — from anywhere.
             </p>
@@ -33,7 +34,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {["Primary Care", "Behavioral Health", "Telehealth Visits", "Medication Management", "Chronic Care", "Wellness Programs"].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-sm transition-colors hover:text-primary" style={{ color: 'hsl(220, 15%, 55%)' }}>
+                  <a href="/#services" className="text-sm transition-colors hover:text-primary" style={{ color: 'hsl(220, 15%, 55%)' }}>
                     {item}
                   </a>
                 </li>
@@ -47,11 +48,16 @@ const Footer = () => {
               Company
             </h4>
             <ul className="space-y-3">
-              {["About Us", "Our Mission", "Privacy Policy", "Terms of Service", "HIPAA Notice"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-sm transition-colors hover:text-primary" style={{ color: 'hsl(220, 15%, 55%)' }}>
-                    {item}
-                  </a>
+              {[
+                { label: "About Us", to: "/about" },
+                { label: "Our Mission", to: "/about" },
+                { label: "Privacy Policy", to: "/privacy" },
+                { label: "Contact", to: "/contact" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link to={item.to} className="text-sm transition-colors hover:text-primary" style={{ color: 'hsl(220, 15%, 55%)' }}>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
