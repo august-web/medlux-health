@@ -21,7 +21,7 @@ const sections = [
   {
     title: "HIPAA Compliance",
     content: [
-      "DeluxMed Health Group LLC is fully committed to protecting the privacy and security of your health information in accordance with the Health Insurance Portability and Accountability Act (HIPAA).",
+      "DeluxMed Health Group, LLC is fully committed to protecting the privacy and security of your health information in accordance with the Health Insurance Portability and Accountability Act (HIPAA).",
       "All clinical interactions, medical records, and protected health information (PHI) are handled exclusively through our HIPAA-compliant telehealth platforms with enterprise-grade encryption.",
       "Our Notice of Privacy Practices is available upon request and will be provided to all patients prior to their first visit.",
     ],
