@@ -8,7 +8,7 @@ const contactMethods = [
   {
     icon: Phone,
     title: "Phone",
-    detail: "(555) 123-4567",
+    detail: "(240) 780-8930",
     sub: "Mon–Fri, 8am–6pm EST",
   },
   {
