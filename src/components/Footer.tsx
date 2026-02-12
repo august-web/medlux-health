@@ -17,7 +17,7 @@ const Footer = () => {
                   DeluxMed
                 </span>
                 <span className="block text-[10px] uppercase tracking-widest -mt-1" style={{ color: 'hsl(40, 20%, 60%)' }}>
-                  Health Group LLC
+                  Health Group, LLC
                 </span>
               </div>
             </Link>
@@ -71,7 +71,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-sm" style={{ color: 'hsl(220, 15%, 55%)' }}>
                 <Phone className="w-4 h-4 text-primary" />
-                (555) 123-4567
+                <a href="tel:+12407808930" className="hover:text-primary transition-colors">(240) 780-8930</a>
               </li>
               <li className="flex items-center gap-3 text-sm" style={{ color: 'hsl(220, 15%, 55%)' }}>
                 <Mail className="w-4 h-4 text-primary" />
@@ -79,7 +79,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3 text-sm" style={{ color: 'hsl(220, 15%, 55%)' }}>
                 <MapPin className="w-4 h-4 text-primary mt-0.5" />
-                Telehealth Services Available Nationwide
+                <span>1503 E North Ave<br />Baltimore, MD 21213</span>
               </li>
             </ul>
           </div>
@@ -89,7 +89,7 @@ const Footer = () => {
         <div className="border-t pt-8" style={{ borderColor: 'hsl(220, 20%, 22%)' }}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-xs" style={{ color: 'hsl(220, 15%, 45%)' }}>
-              © {new Date().getFullYear()} DeluxMed Health Group LLC. All rights reserved.
+              © {new Date().getFullYear()} DeluxMed Health Group, LLC. All rights reserved.
             </p>
             <p className="text-xs" style={{ color: 'hsl(220, 15%, 45%)' }}>
               This website does not provide medical advice. For emergencies, call 911.

@@ -45,7 +45,7 @@ const Navbar = () => {
                 DeluxMed
               </span>
               <span className={`block text-[10px] uppercase tracking-widest -mt-1 ${showScrolledStyle ? "text-muted-foreground" : "text-primary-foreground/60"}`}>
-                Health Group
+                Health Group, LLC
               </span>
             </div>
           </Link>

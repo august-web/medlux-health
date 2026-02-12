@@ -8,7 +8,7 @@ const contactMethods = [
   {
     icon: Phone,
     title: "Phone",
-    detail: "(555) 123-4567",
+    detail: "(240) 780-8930",
     sub: "Mon–Fri, 8am–6pm EST",
   },
   {
@@ -20,8 +20,8 @@ const contactMethods = [
   {
     icon: MapPin,
     title: "Location",
-    detail: "Telehealth Nationwide",
-    sub: "Serving patients across the US",
+    detail: "1503 E North Ave",
+    sub: "Baltimore, MD 21213",
   },
   {
     icon: Clock,

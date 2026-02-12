@@ -47,7 +47,7 @@ const FounderSection = () => {
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 With over 15 years of experience in internal medicine and a deep commitment to
-                health equity, Dr. Mitchell founded DeluxMed Health Group to bridge the gap
+                health equity, Dr. Mitchell founded DeluxMed Health Group, LLC to bridge the gap
                 between primary care and mental health.
               </p>
               <p>

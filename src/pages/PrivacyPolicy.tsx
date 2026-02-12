@@ -21,7 +21,7 @@ const sections = [
   {
     title: "HIPAA Compliance",
     content: [
-      "DeluxMed Health Group LLC is fully committed to protecting the privacy and security of your health information in accordance with the Health Insurance Portability and Accountability Act (HIPAA).",
+      "DeluxMed Health Group, LLC is fully committed to protecting the privacy and security of your health information in accordance with the Health Insurance Portability and Accountability Act (HIPAA).",
       "All clinical interactions, medical records, and protected health information (PHI) are handled exclusively through our HIPAA-compliant telehealth platforms with enterprise-grade encryption.",
       "Our Notice of Privacy Practices is available upon request and will be provided to all patients prior to their first visit.",
     ],
@@ -64,7 +64,7 @@ const sections = [
   {
     title: "Contact Us",
     content: [
-      "If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at care@deluxmed.com or call (555) 123-4567.",
+      "If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at care@deluxmed.com or call (240) 780-8930.",
     ],
   },
 ];
@@ -108,7 +108,7 @@ const PrivacyPolicy = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-muted-foreground leading-relaxed mb-12"
             >
-              At DeluxMed Health Group LLC, your privacy is our priority. This Privacy Policy
+              At DeluxMed Health Group, LLC, your privacy is our priority. This Privacy Policy
               explains how we collect, use, and protect your personal information when you
               visit our website.
             </motion.p>
