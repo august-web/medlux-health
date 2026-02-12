@@ -64,7 +64,7 @@ const sections = [
   {
     title: "Contact Us",
     content: [
-      "If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at care@deluxmed.com or call (555) 123-4567.",
+      "If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at care@deluxmed.com or call (240) 780-8930.",
     ],
   },
 ];
