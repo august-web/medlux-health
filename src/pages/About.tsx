@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import founderImage from "@/assets/founder-portrait.jpg";
 
 const milestones = [
-  { year: "2018", title: "Founded", description: "DeluxMed Health Group LLC was established with a vision for integrated care." },
+  { year: "2018", title: "Founded", description: "DeluxMed Health Group, LLC was established with a vision for integrated care." },
   { year: "2020", title: "Telehealth Launch", description: "Expanded to nationwide telehealth services during a time of unprecedented need." },
   { year: "2022", title: "Behavioral Health Integration", description: "Added comprehensive behavioral health services under one roof." },
   { year: "2024", title: "5,000+ Patients", description: "Reached a milestone of over 5,000 patients served with a 98% satisfaction rate." },
