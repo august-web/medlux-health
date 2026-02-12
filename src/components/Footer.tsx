@@ -89,7 +89,7 @@ const Footer = () => {
         <div className="border-t pt-8" style={{ borderColor: 'hsl(220, 20%, 22%)' }}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-xs" style={{ color: 'hsl(220, 15%, 45%)' }}>
-              © {new Date().getFullYear()} DeluxMed Health Group LLC. All rights reserved.
+              © {new Date().getFullYear()} DeluxMed Health Group, LLC. All rights reserved.
             </p>
             <p className="text-xs" style={{ color: 'hsl(220, 15%, 45%)' }}>
               This website does not provide medical advice. For emergencies, call 911.
