@@ -17,7 +17,7 @@ const Footer = () => {
                   DeluxMed
                 </span>
                 <span className="block text-[10px] uppercase tracking-widest -mt-1" style={{ color: 'hsl(40, 20%, 60%)' }}>
-                  Health Group LLC
+                  Health Group, LLC
                 </span>
               </div>
             </Link>

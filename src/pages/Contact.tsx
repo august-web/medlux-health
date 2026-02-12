@@ -20,8 +20,8 @@ const contactMethods = [
   {
     icon: MapPin,
     title: "Location",
-    detail: "Telehealth Nationwide",
-    sub: "Serving patients across the US",
+    detail: "1503 E North Ave",
+    sub: "Baltimore, MD 21213",
   },
   {
     icon: Clock,
