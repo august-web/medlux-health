@@ -71,7 +71,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-sm" style={{ color: 'hsl(220, 15%, 55%)' }}>
                 <Phone className="w-4 h-4 text-primary" />
-                (555) 123-4567
+                <a href="tel:+12407808930" className="hover:text-primary transition-colors">(240) 780-8930</a>
               </li>
               <li className="flex items-center gap-3 text-sm" style={{ color: 'hsl(220, 15%, 55%)' }}>
                 <Mail className="w-4 h-4 text-primary" />
@@ -79,7 +79,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3 text-sm" style={{ color: 'hsl(220, 15%, 55%)' }}>
                 <MapPin className="w-4 h-4 text-primary mt-0.5" />
-                Telehealth Services Available Nationwide
+                <span>1503 E North Ave<br />Baltimore, MD 21213</span>
               </li>
             </ul>
           </div>
