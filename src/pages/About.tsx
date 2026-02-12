@@ -40,7 +40,7 @@ const About = () => {
               Healthcare With Heart
             </h1>
             <p className="text-lg text-primary-foreground/80 leading-relaxed max-w-2xl">
-              At DeluxMed Health Group, we believe everyone deserves care that sees them as a whole person — not just a set of symptoms.
+              At DeluxMed Health Group, LLC, we believe everyone deserves care that sees them as a whole person — not just a set of symptoms.
             </p>
           </motion.div>
         </div>

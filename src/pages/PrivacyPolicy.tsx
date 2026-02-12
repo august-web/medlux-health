@@ -108,7 +108,7 @@ const PrivacyPolicy = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-muted-foreground leading-relaxed mb-12"
             >
-              At DeluxMed Health Group LLC, your privacy is our priority. This Privacy Policy
+              At DeluxMed Health Group, LLC, your privacy is our priority. This Privacy Policy
               explains how we collect, use, and protect your personal information when you
               visit our website.
             </motion.p>
