@@ -69,11 +69,11 @@ const Navbar = () => {
               </Link>
             ))}
             
+            
             <Button
               size="lg"
               className={`rounded-full px-8 font-bold transition-all duration-300 ${
                 showScrolledStyle
-                  ? "bg-primary text-white hover:bg-primary/90 shadow-md hover:shadow-lg"
                   : "bg-white text-primary hover:bg-secondary hover:text-primary shadow-xl"
               }`}
             >
