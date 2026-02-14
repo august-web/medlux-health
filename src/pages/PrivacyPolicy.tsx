@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Shield } from "lucide-react";
 
 const sections = [
   {
@@ -75,23 +76,34 @@ const PrivacyPolicy = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-1/3 w-80 h-80 rounded-full bg-teal-glow blur-3xl" />
+      <section className="pt-32 pb-24 lg:pt-48 lg:pb-32 bg-primary relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-1/4 w-[600px] h-[600px] rounded-full bg-secondary/10 blur-[120px] animate-pulse" />
+          <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full bg-teal-glow/10 blur-[100px]" />
+          <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
         </div>
+        
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
           >
-            <span className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/60 mb-4 block">
-              Legal
-            </span>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-4">
-              Privacy Policy
+            <motion.span 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-secondary text-xs font-bold uppercase tracking-[0.3em] mb-8 backdrop-blur-md"
+            >
+              <Shield className="w-3.5 h-3.5" />
+              Legal Commitment
+            </motion.span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-10 leading-tight">
+              Privacy <span className="text-secondary italic">Policy</span>
             </h1>
-            <p className="text-primary-foreground/70 text-sm">
+            <p className="text-xl md:text-2xl text-white/70 leading-relaxed font-light max-w-2xl mx-auto">
               Effective Date: January 1, 2024 — Last Updated: January 1, 2024
             </p>
           </motion.div>
@@ -99,14 +111,18 @@ const PrivacyPolicy = () => {
       </section>
 
       {/* Content */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-6 lg:px-12">
+      <section className="py-24 lg:py-40 bg-background relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-secondary/5 rounded-full blur-3xl opacity-50" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-teal-glow/5 rounded-full blur-3xl opacity-30" />
+        
+        <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="max-w-3xl mx-auto">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg text-muted-foreground leading-relaxed mb-12"
+              className="text-xl text-slate-600 leading-relaxed mb-16 text-center"
             >
               At DeluxMed Health Group, LLC, your privacy is our priority. This Privacy Policy
               explains how we collect, use, and protect your personal information when you
@@ -121,13 +137,14 @@ const PrivacyPolicy = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
+                  className="glass-card p-8 rounded-3xl border border-white/40 hover:translate-y-[-8px] transition-all duration-300 group"
                 >
-                  <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                  <h2 className="text-2xl font-serif font-bold text-primary mb-6 group-hover:text-secondary transition-colors">
                     {index + 1}. {section.title}
                   </h2>
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {section.content.map((paragraph, pi) => (
-                      <p key={pi} className="text-muted-foreground leading-relaxed text-sm">
+                      <p key={pi} className="text-slate-600 leading-relaxed text-base">
                         {paragraph}
                       </p>
                     ))}

@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Shield } from "lucide-react";
+import NavDropdown from "@/components/NavDropdown";
+import SecondaryNav from "@/components/SecondaryNav";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Services", href: "/#services" },
-  { label: "Telehealth", href: "/#telehealth" },
-  { label: "About", href: "/about" },
+  { label: "Integrated Care", href: "/#integrated-care" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -27,37 +28,38 @@ const Navbar = () => {
   const showScrolledStyle = isScrolled || !isHome;
 
   return (
+    <>
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         showScrolledStyle
-          ? "bg-background/95 backdrop-blur-md shadow-soft border-b border-border"
-          : "bg-transparent"
+          ? "bg-white/80 backdrop-blur-lg shadow-soft border-b border-slate-100 py-3"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-18 py-4">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-              <Shield className="w-5 h-5 text-primary-foreground" />
+        <div className="flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-11 h-11 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform duration-300">
+              <Shield className="w-6 h-6 text-secondary" />
             </div>
             <div>
-              <span className={`text-lg font-serif font-bold tracking-tight ${showScrolledStyle ? "text-foreground" : "text-primary-foreground"}`}>
+              <span className={`text-xl font-serif font-bold tracking-tight transition-colors duration-300 ${showScrolledStyle ? "text-primary" : "text-white"}`}>
                 DeluxMed
               </span>
-              <span className={`block text-[10px] uppercase tracking-widest -mt-1 ${showScrolledStyle ? "text-muted-foreground" : "text-primary-foreground/60"}`}>
-                Health Group, LLC
+              <span className={`block text-[10px] font-bold uppercase tracking-[0.2em] -mt-1 transition-colors duration-300 ${showScrolledStyle ? "text-slate-500" : "text-white/70"}`}>
+                Health Group
               </span>
             </div>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) =>
+          <div className="hidden md:flex items-center gap-10">
+            {navLinks.map((link) => (
               link.href.startsWith("/#") ? (
                 <a
                   key={link.label}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    showScrolledStyle ? "text-muted-foreground" : "text-primary-foreground/80 hover:text-primary-foreground"
+                  className={`text-sm font-semibold tracking-wide hover:text-secondary transition-colors duration-300 ${
+                    showScrolledStyle ? "text-slate-600" : "text-white/90"
                   }`}
                 >
                   {link.label}
@@ -66,24 +68,38 @@ const Navbar = () => {
                 <Link
                   key={link.label}
                   to={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    showScrolledStyle ? "text-muted-foreground" : "text-primary-foreground/80 hover:text-primary-foreground"
-                  } ${location.pathname === link.href ? "text-primary" : ""}`}
+                  className={`text-sm font-semibold tracking-wide hover:text-secondary transition-colors duration-300 ${
+                    showScrolledStyle ? "text-slate-600" : "text-white/90"
+                  }`}
                 >
                   {link.label}
                 </Link>
               )
-            )}
-            <Button variant={showScrolledStyle ? "default" : "hero"} size="sm">
-              Book via Secure Platform
+            ))}
+            <NavDropdown />
+            
+            <Button
+              size="lg"
+              className={`rounded-full px-8 font-bold transition-all duration-300 ${
+                showScrolledStyle
+                  ? "bg-primary text-white hover:bg-primary/90 shadow-md hover:shadow-lg"
+                  : "bg-white text-primary hover:bg-secondary hover:text-primary shadow-xl"
+              }`}
+            >
+              Patient Portal
             </Button>
           </div>
 
+          {/* Mobile Menu Button */}
           <button
+            className="md:hidden p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`md:hidden p-2 rounded-lg ${showScrolledStyle ? "text-foreground" : "text-primary-foreground"}`}
           >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileOpen ? (
+              <X className={showScrolledStyle ? "text-primary" : "text-white"} />
+            ) : (
+              <Menu className={showScrolledStyle ? "text-primary" : "text-white"} />
+            )}
           </button>
         </div>
       </div>
@@ -118,6 +134,28 @@ const Navbar = () => {
                   </Link>
                 )
               )}
+              <div className="pt-4">
+                <p className="text-xs uppercase tracking-widest text-slate-400 mb-2">About</p>
+                <div className="space-y-2">
+                  <Link to="/about" onClick={() => setMobileOpen(false)} className="block text-base font-medium text-foreground hover:text-primary transition-colors">
+                    Our Story
+                  </Link>
+                  <Link to="/provider/doreen" onClick={() => setMobileOpen(false)} className="block text-base font-medium text-foreground hover:text-primary transition-colors">
+                    Provider: Doreen Ackom-Owusu
+                  </Link>
+                </div>
+              </div>
+              <div className="pt-4">
+                <p className="text-xs uppercase tracking-widest text-slate-400 mb-2">Resources</p>
+                <div className="space-y-2">
+                  <Link to="/faq/telehealth-security" onClick={() => setMobileOpen(false)} className="block text-base font-medium text-foreground hover:text-primary transition-colors">
+                    Telehealth Security FAQ
+                  </Link>
+                  <Link to="/privacy" onClick={() => setMobileOpen(false)} className="block text-base font-medium text-foreground hover:text-primary transition-colors">
+                    Privacy Policy
+                  </Link>
+                </div>
+              </div>
               <Button variant="default" size="lg" className="w-full mt-4">
                 Book via Secure Platform
               </Button>
@@ -126,6 +164,10 @@ const Navbar = () => {
         )}
       </AnimatePresence>
     </nav>
+    <div className={showScrolledStyle ? "" : "hidden"}>
+      <SecondaryNav />
+    </div>
+    </>
   );
 };
 

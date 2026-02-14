@@ -22,10 +22,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-8"
           >
-            <Shield className="w-4 h-4 text-accent-foreground" style={{ color: 'hsl(172, 45%, 60%)' }} />
-            <span className="text-sm font-medium" style={{ color: 'hsl(172, 45%, 70%)' }}>
+            <Shield className="w-4 h-4 text-secondary" />
+            <span className="text-sm font-semibold tracking-wide text-white/90">
               HIPAA-Compliant Telehealth
             </span>
           </motion.div>
@@ -34,11 +34,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6"
-            style={{ color: 'hsl(40, 33%, 98%)' }}
+            className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-6 text-white"
           >
             Healthcare That Sees{" "}
-            <span style={{ color: 'hsl(172, 45%, 60%)' }}>
+            <span className="text-secondary italic">
               the Whole You
             </span>
           </motion.h1>
@@ -47,10 +46,9 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45 }}
-            className="text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
-            style={{ color: 'hsl(40, 20%, 80%)' }}
+            className="text-lg md:text-xl leading-relaxed mb-10 max-w-xl text-white/80"
           >
-            Primary care and behavioral health, integrated under one roof.
+            Integrated primary care and behavioral health.
             Compassionate, convenient, and secure — from anywhere.
           </motion.p>
 
