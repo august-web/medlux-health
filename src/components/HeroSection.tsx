@@ -1,9 +1,15 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Shield, ArrowRight } from "lucide-react";
+import { Shield, ArrowRight, Lock } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { useState } from "react";
 import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
+  const [openPortal, setOpenPortal] = useState(false);
+  const [openSchedule, setOpenSchedule] = useState(false);
+  const PORTAL_URL = "https://secure.deluxmed.com/portal";
+  const SCHEDULE_URL = "https://secure.deluxmed.com/schedule";
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       {/* Background image with overlay */}
@@ -36,10 +42,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-6 text-white"
           >
-            Healthcare That Sees{" "}
-            <span className="text-secondary italic">
-              the Whole You
-            </span>
+            Nurse Practitioner–Led Primary & Behavioral Care
           </motion.h1>
 
           <motion.p
@@ -48,8 +51,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.45 }}
             className="text-lg md:text-xl leading-relaxed mb-10 max-w-xl text-white/80"
           >
-            Integrated primary care and behavioral health.
-            Compassionate, convenient, and secure — from anywhere.
+            Integrated, evidence-based care serving Baltimore and Maryland. Compassionate, secure telehealth on HIPAA-compliant platforms.
           </motion.p>
 
           <motion.div
@@ -58,18 +60,23 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button variant="hero" size="xl" className="group">
-              Start Telehealth Visit
+            <Button variant="hero" size="xl" className="group" onClick={() => setOpenPortal(true)}>
+              Access Secure Portal
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button
               variant="heroOutline"
               size="xl"
               className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              onClick={() => setOpenSchedule(true)}
             >
-              Access Secure Portal
+              Schedule Secure Visit
             </Button>
           </motion.div>
+          <div className="mt-6 flex items-center gap-3 text-white/70">
+            <Lock className="w-4 h-4 text-secondary" />
+            <span className="text-sm">All appointments and portals handled via HIPAA-compliant partners</span>
+          </div>
         </div>
       </div>
 
@@ -82,6 +89,42 @@ const HeroSection = () => {
           />
         </svg>
       </div>
+      <Dialog open={openPortal} onOpenChange={setOpenPortal}>
+        <DialogContent className="max-w-lg">
+          <DialogHeader>
+            <DialogTitle className="text-primary">Leaving DeluxMed</DialogTitle>
+            <DialogDescription>
+              You are being redirected to our HIPAA-compliant patient portal. No medical information is collected on this website.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex gap-4 mt-6">
+            <Button className="flex-1" onClick={() => window.open(PORTAL_URL, "_blank", "noopener")}>
+              Continue to Portal
+            </Button>
+            <Button variant="ghost" className="flex-1" onClick={() => setOpenPortal(false)}>
+              Stay Here
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+      <Dialog open={openSchedule} onOpenChange={setOpenSchedule}>
+        <DialogContent className="max-w-lg">
+          <DialogHeader>
+            <DialogTitle className="text-primary">Leaving DeluxMed</DialogTitle>
+            <DialogDescription>
+              You are being redirected to our HIPAA-compliant scheduling platform. No medical information is collected on this website.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex gap-4 mt-6">
+            <Button className="flex-1" onClick={() => window.open(SCHEDULE_URL, "_blank", "noopener")}>
+              Continue to Schedule
+            </Button>
+            <Button variant="ghost" className="flex-1" onClick={() => setOpenSchedule(false)}>
+              Stay Here
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

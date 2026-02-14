@@ -12,6 +12,9 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import ProviderDoreen from "./pages/ProviderDoreen";
 import TelehealthFAQ from "./pages/TelehealthFAQ";
+import PrimaryCare from "./pages/PrimaryCare";
+import BehavioralHealth from "./pages/BehavioralHealth";
+import Telehealth from "./pages/Telehealth";
 
 const queryClient = new QueryClient();
 
@@ -27,13 +30,16 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/services/primary-care" element={<PrimaryCare />} />
+          <Route path="/services/behavioral-health" element={<BehavioralHealth />} />
+          <Route path="/telehealth" element={<Telehealth />} />
           <Route path="/provider/doreen" element={<ProviderDoreen />} />
           <Route path="/faq/telehealth-security" element={<TelehealthFAQ />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-      <Analytics />
+      {import.meta.env.PROD && <Analytics />}
     </TooltipProvider>
   </QueryClientProvider>
 );

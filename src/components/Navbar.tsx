@@ -7,8 +7,12 @@ import SecondaryNav from "@/components/SecondaryNav";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Services", href: "/#services" },
-  { label: "Integrated Care", href: "/#integrated-care" },
+  { label: "Home", href: "/" },
+  { label: "Primary Care", href: "/services/primary-care" },
+  { label: "Behavioral Health", href: "/services/behavioral-health" },
+  { label: "Telehealth", href: "/telehealth" },
+  { label: "Provider", href: "/provider/doreen" },
+  { label: "Resources", href: "/faq/telehealth-security" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -54,35 +58,22 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
-              link.href.startsWith("/#") ? (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className={`text-sm font-semibold tracking-wide hover:text-secondary transition-colors duration-300 ${
-                    showScrolledStyle ? "text-slate-600" : "text-white/90"
-                  }`}
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  className={`text-sm font-semibold tracking-wide hover:text-secondary transition-colors duration-300 ${
-                    showScrolledStyle ? "text-slate-600" : "text-white/90"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              )
+              <Link
+                key={link.label}
+                to={link.href}
+                className={`text-sm font-semibold tracking-wide hover:text-secondary transition-colors duration-300 ${
+                  showScrolledStyle ? "text-slate-600" : "text-white/90"
+                }`}
+              >
+                {link.label}
+              </Link>
             ))}
-            <NavDropdown />
+            
             
             <Button
               size="lg"
               className={`rounded-full px-8 font-bold transition-all duration-300 ${
                 showScrolledStyle
-                  ? "bg-primary text-white hover:bg-primary/90 shadow-md hover:shadow-lg"
                   : "bg-white text-primary hover:bg-secondary hover:text-primary shadow-xl"
               }`}
             >
